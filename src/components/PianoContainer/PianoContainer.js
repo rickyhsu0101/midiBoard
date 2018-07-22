@@ -23,6 +23,8 @@ class PianoContainer extends Component{
   interval = "";
   playSequence = ()=>{
     //const baseDuration = 4*60/(this.state.bpm*16);
+    this.midiSounds.cancelQueue();
+    clearInterval(this.interval);
     console.log("playing");
     this.setState({index: 0, currentBeat: 0});
     const beats = [];
@@ -86,6 +88,7 @@ class PianoContainer extends Component{
   stopSequence = ()=>{
    // this.midiSounds.stopPlayLoop();
     clearInterval(this.interval);
+    this.midiSounds.cancelQueue();
     this.setState({currentBeat: -1});
   }
   playNote = pitch => {
@@ -254,6 +257,27 @@ class PianoContainer extends Component{
     }
 
   }
+  leftMost = () => {
+    if(this.state.index !== 0){
+      this.setState({index: 0}, () => console.log(this.state));
+    }
+  }
+  rightMost = () => {
+    if(this.state.index < this.state.measures - 12 && this.state.measures > 12){
+      this.setState({index: this.state.measures-12});
+    };
+  }
+  bpmChange = (e) => {
+    let {name, value} = e.target;
+    this.setState({
+      [name]: parseInt(value, 10)
+    }, ()=>{
+      if(this.state.beat!=-1){
+        this.playSequence();
+      }
+    });
+    
+  }
   render() {
     return(
       <div className = "container">
@@ -263,7 +287,10 @@ class PianoContainer extends Component{
           removeMeasure = {this.removeMeasure}
           start = {this.playSequence}
           stop = {this.stopSequence}
+          bpm  = {this.state.bpm}
+          bpmChange = {this.bpmChange}
         />
+        
         <div className = "row">
           <div className = "col-2">
             <PianoKeys 
@@ -284,6 +311,8 @@ class PianoContainer extends Component{
               maxIndex = {this.state.measures-1}
               previous = {this.previous}
               next = {this.next}
+              leftMost = {this.leftMost}
+              rightMost = {this.rightMost}
               currentBeat = {this.state.currentBeat}
             />
           </div>

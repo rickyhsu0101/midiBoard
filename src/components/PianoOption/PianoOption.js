@@ -1,4 +1,5 @@
 import React from 'react';
+import './PianoOption.css';
 const PianoOption = props => {
   return (
     <div className = "row">
@@ -26,10 +27,13 @@ const PianoOption = props => {
               <i className = "material-icons" >pause_circle_filled </i>
             </button>
           </div>
+          <div className = "col-1">
+            <input type = "number" id = "bpmBox"name = "bpm" value = {props.bpm} onChange = {props.bpmChange}></input>
+          </div>
         </div>
         </div>
       </div>
-      <input type = "number"></input>
+      
     </div>
   );
 }

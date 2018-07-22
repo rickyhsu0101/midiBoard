@@ -57,6 +57,15 @@ class MidiMap extends Component{
         
         <div className="container">
           <div className = "row">
+           <div className = "col-1">
+              <button 
+                className = {`btn left ${(this.props.index!==0) ? "btn-primary": "btn-secondary"}`}
+                onClick = {this.props.leftMost}
+              >
+                <i className = "material-icons" >
+                  first_page </i>
+              </button>
+            </div>
             <div className = "col-1">
               <button 
                 className = {`btn left ${(this.props.index!==0) ? "btn-primary": "btn-secondary"}`}
@@ -74,8 +83,6 @@ class MidiMap extends Component{
             <div className = "col-1"></div>
             <div className = "col-1"></div>
             <div className = "col-1"></div>
-            <div className = "col-1"></div>
-            <div className = "col-1"></div>
             <div className = "col-1">
               <button 
                 className = {`btn right ${(this.props.index+12<=this.props.maxIndex) ? "btn-primary": "btn-secondary"}`}
@@ -83,6 +90,15 @@ class MidiMap extends Component{
               >
                 <i className = "material-icons" >
                   arrow_forward_ios </i>
+              </button>
+            </div>
+            <div className = "col-1">
+              <button 
+                className = {`btn right ${(this.props.index+12<=this.props.maxIndex) ? "btn-primary": "btn-secondary"}`}
+                onClick = {this.props.rightMost}
+              >
+                <i className = "material-icons" >
+                  last_page </i>
               </button>
             </div>
           </div>
