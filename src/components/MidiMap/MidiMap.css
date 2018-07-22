@@ -1,0 +1,18 @@
+
+button{
+  height: 50px;
+  width: 100%;
+}
+.col-1{
+  height: 50px;
+  padding: 0;
+  text-align: center;
+}
+.textContainer{
+  position: relative;
+}
+.col-1 .measureText{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}

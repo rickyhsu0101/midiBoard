@@ -1,0 +1,24 @@
+.gridNote {
+  height: 50px;
+  width: 100%;
+  border: 1px solid rgb(182, 182, 182);
+}
+.gridNote.inactive{
+  background-color: black;
+}
+.gridNote.active:hover:not(.used) {
+  background-color: rgb(177, 177, 177);
+}
+.gridNote.used{
+  background-color: rgb(241, 122, 142);
+  border: 1px solid rgb(241, 122, 142);
+}
+.gridNote.used:hover{
+  background-color: rgb(177, 177, 177);
+}
+.corner{
+  border-radius: 20px;
+}
+.gridNote.playing{
+  background-color: yellow;
+}
