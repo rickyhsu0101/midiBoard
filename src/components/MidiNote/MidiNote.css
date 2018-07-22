@@ -6,16 +6,18 @@
 .gridNote.inactive{
   background-color: black;
 }
+
+.gridNote.active{
+  background-color: lightgray;
+}
 .gridNote.active:hover:not(.used) {
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(241, 122, 142);
 }
 .gridNote.used{
-  background-color: rgb(241, 122, 142);
+  background-color: rgba(255, 0, 0, 0.808);
   border: 1px solid rgb(241, 122, 142);
 }
-.gridNote.used:hover{
-  background-color: rgb(177, 177, 177);
-}
+
 .corner{
   border-radius: 20px;
 }
