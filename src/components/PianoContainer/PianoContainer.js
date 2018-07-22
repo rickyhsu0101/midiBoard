@@ -256,7 +256,7 @@ class PianoContainer extends Component{
   }
   render() {
     return(
-      <div className = "container">
+      <div className = "container mainCont">
         <MIDISounds ref={(ref) => (this.midiSounds = ref)} appElementName="root" instruments={[0]}/>
         <PianoOption 
           addMeasure = {this.addMeasure}

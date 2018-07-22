@@ -7,6 +7,8 @@ button{
   height: 50px;
   padding: 0;
   text-align: center;
+  color: white;
+  font-weight: bold;
 }
 .textContainer{
   position: relative;
